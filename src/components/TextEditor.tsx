@@ -31,7 +31,7 @@ const TextEditor = ({
       failed.add(currentIndex);
       setFailed(failed);
     }
-    console.log(key, currentIndex);
+    // eslint-disable-next-line
   }, [key]);
 
   const getState = (index: number) => {
