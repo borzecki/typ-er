@@ -1,5 +1,6 @@
 body {
   text-align: center;
+  font-family: "Courier New", Courier, monospace;
 
   background-color: #282c34;
   min-height: 100vh;
@@ -11,12 +12,25 @@ body {
   color: white;
 }
 
+.score {
+  font-size: 1em;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.errors {
+  font-size: 1em;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 .editor {
   width: 80%;
   text-align: center;
   margin: 0 auto;
   word-break: break-word;
-  font-family: "Courier New", Courier, monospace;
   transition: all 200ms linear;
 }
 

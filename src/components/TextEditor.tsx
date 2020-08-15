@@ -9,9 +9,13 @@ const Letter = ({ char, state }: { char: string; state: any }) => (
 
 const TextEditor = ({
   text,
+  resetTimer,
+  increaseErrors,
   onComplete,
 }: {
   text: string;
+  resetTimer?: () => void;
+  increaseErrors?: () => void;
   onComplete: () => void;
 }) => {
   const key = useKeyPress();
@@ -25,11 +29,17 @@ const TextEditor = ({
       setIndex(0);
     }
     if (key === "") return;
+
+    // reset timer when first character is typed
+    if (currentIndex === 0 && !failed.has(currentIndex) && resetTimer)
+      resetTimer();
+
     if (key === text[currentIndex]) {
       setIndex(currentIndex + 1);
     } else {
       failed.add(currentIndex);
       setFailed(failed);
+      increaseErrors && increaseErrors();
     }
     // eslint-disable-next-line
   }, [key]);
