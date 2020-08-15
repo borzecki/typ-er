@@ -1,16 +1,12 @@
 import React, { useState } from "react";
 import TextEditor from "./components/TextEditor";
+import Analysis from "./components/Analysis";
 
 import "./App.css";
+import "balloon-css";
+import Footer from "./components/Footer";
 
-const Analysis = ({ wpm, errors }: { wpm: any; errors: any }) => (
-  <>
-    <div className="score">{wpm}</div>
-    <div className="errors">{errors > 0 && errors}</div>
-  </>
-);
-
-function App() {
+const App = () => {
   const [text, setText] = useState("");
   const [started, setStarted] = useState(new Date().getTime());
   const [wpm, setWPM] = useState<number>();
@@ -28,17 +24,19 @@ function App() {
         setText(result.replace(/[.,&--+\d']/g, "").toLowerCase())
       );
   };
+
   return (
     <>
       <Analysis wpm={wpm} errors={errors} />
       <TextEditor
         text={text}
         resetTimer={() => setStarted(new Date().getTime())}
-        onComplete={fetchNew}
         increaseErrors={() => setErrors(errors + 1)}
+        onComplete={fetchNew}
       />
+      <Footer />
     </>
   );
-}
+};
 
 export default App;
