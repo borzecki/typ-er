@@ -1,0 +1,181 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextEditor tests completes the edit flow 1`] = `
+<TextEditor
+  onComplete={
+    [MockFunction] {
+      "calls": Array [
+        Array [],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  text="test"
+>
+  <div
+    className="editor"
+  >
+    <Letter
+      char="t"
+      key="0"
+      state={
+        Object {
+          "current": true,
+          "failed": false,
+          "success": false,
+          "unused": false,
+        }
+      }
+    >
+      <span
+        className="current"
+      >
+        t
+      </span>
+    </Letter>
+    <Letter
+      char="e"
+      key="1"
+      state={
+        Object {
+          "current": false,
+          "failed": false,
+          "success": false,
+          "unused": true,
+        }
+      }
+    >
+      <span
+        className="unused"
+      >
+        e
+      </span>
+    </Letter>
+    <Letter
+      char="s"
+      key="2"
+      state={
+        Object {
+          "current": false,
+          "failed": false,
+          "success": false,
+          "unused": true,
+        }
+      }
+    >
+      <span
+        className="unused"
+      >
+        s
+      </span>
+    </Letter>
+    <Letter
+      char="t"
+      key="3"
+      state={
+        Object {
+          "current": false,
+          "failed": false,
+          "success": false,
+          "unused": true,
+        }
+      }
+    >
+      <span
+        className="unused"
+      >
+        t
+      </span>
+    </Letter>
+  </div>
+</TextEditor>
+`;
+
+exports[`TextEditor tests handles errors 1`] = `
+<TextEditor
+  onComplete={[MockFunction]}
+  text="test"
+>
+  <div
+    className="editor"
+  >
+    <Letter
+      char="t"
+      key="0"
+      state={
+        Object {
+          "current": false,
+          "failed": true,
+          "success": false,
+          "unused": false,
+        }
+      }
+    >
+      <span
+        className="failed"
+      >
+        t
+      </span>
+    </Letter>
+    <Letter
+      char="e"
+      key="1"
+      state={
+        Object {
+          "current": true,
+          "failed": true,
+          "success": false,
+          "unused": false,
+        }
+      }
+    >
+      <span
+        className="current failed"
+      >
+        e
+      </span>
+    </Letter>
+    <Letter
+      char="s"
+      key="2"
+      state={
+        Object {
+          "current": false,
+          "failed": false,
+          "success": false,
+          "unused": true,
+        }
+      }
+    >
+      <span
+        className="unused"
+      >
+        s
+      </span>
+    </Letter>
+    <Letter
+      char="t"
+      key="3"
+      state={
+        Object {
+          "current": false,
+          "failed": false,
+          "success": false,
+          "unused": true,
+        }
+      }
+    >
+      <span
+        className="unused"
+      >
+        t
+      </span>
+    </Letter>
+  </div>
+</TextEditor>
+`;
